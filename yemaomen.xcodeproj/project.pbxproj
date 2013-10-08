@@ -22,8 +22,6 @@
 		5EFCD4C91803A2EE00B0BD27 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EFCD4C71803A2EE00B0BD27 /* InfoPlist.strings */; };
 		5EFCD4CB1803A2EE00B0BD27 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EFCD4CA1803A2EE00B0BD27 /* main.m */; };
 		5EFCD4CF1803A2EE00B0BD27 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EFCD4CE1803A2EE00B0BD27 /* AppDelegate.m */; };
-		5EFCD4E61803A2EE00B0BD27 /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EFCD4E41803A2EE00B0BD27 /* FirstViewController.xib */; };
-		5EFCD4E91803A2EE00B0BD27 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EFCD4E71803A2EE00B0BD27 /* SecondViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,8 +46,6 @@
 		5EFCD4CC1803A2EE00B0BD27 /* yemaomen-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "yemaomen-Prefix.pch"; sourceTree = "<group>"; };
 		5EFCD4CD1803A2EE00B0BD27 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5EFCD4CE1803A2EE00B0BD27 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5EFCD4E51803A2EE00B0BD27 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstViewController.xib; sourceTree = "<group>"; };
-		5EFCD4E81803A2EE00B0BD27 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,8 +135,6 @@
 				5E2C8D271803AAC10045A963 /* Resources */,
 				5E2C8D3A1803AD350045A963 /* FirstTab */,
 				5E2C8D371803AD350045A963 /* SecondTab */,
-				5EFCD4E41803A2EE00B0BD27 /* FirstViewController.xib */,
-				5EFCD4E71803A2EE00B0BD27 /* SecondViewController.xib */,
 				5EFCD4C51803A2EE00B0BD27 /* Supporting Files */,
 			);
 			path = yemaomen;
@@ -216,9 +210,7 @@
 				5EFCD4C91803A2EE00B0BD27 /* InfoPlist.strings in Resources */,
 				5E2C8D331803AAC10045A963 /* first.png in Resources */,
 				5E2C8D301803AAC10045A963 /* Default-568h@2x.png in Resources */,
-				5EFCD4E61803A2EE00B0BD27 /* FirstViewController.xib in Resources */,
 				5E2C8D351803AAC10045A963 /* second.png in Resources */,
-				5EFCD4E91803A2EE00B0BD27 /* SecondViewController.xib in Resources */,
 				5E2C8D311803AAC10045A963 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,22 +238,6 @@
 				5EFCD4C81803A2EE00B0BD27 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		5EFCD4E41803A2EE00B0BD27 /* FirstViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5EFCD4E51803A2EE00B0BD27 /* en */,
-			);
-			name = FirstViewController.xib;
-			sourceTree = "<group>";
-		};
-		5EFCD4E71803A2EE00B0BD27 /* SecondViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5EFCD4E81803A2EE00B0BD27 /* en */,
-			);
-			name = SecondViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
