@@ -9,8 +9,9 @@
 #import "AppDelegate.h"
 
 #import "FirstViewController.h"
-
 #import "SecondViewController.h"
+#import "ThirdViewController.h"
+#import "FourthViewController.h"
 
 @implementation AppDelegate
 
@@ -21,8 +22,10 @@
   
   UIViewController *viewController1 = [[FirstViewController alloc] init];
   UIViewController *viewController2 = [[SecondViewController alloc] init];
+  UIViewController *viewController3 = [[ThirdViewController alloc] init];
+  UIViewController *viewController4 = [[FourthViewController alloc] init];
   self.tabBarController = [[UITabBarController alloc] init];
-  self.tabBarController.viewControllers = @[viewController1, viewController2];
+  self.tabBarController.viewControllers = @[viewController1, viewController2, viewController3, viewController4];
   
   self.window.rootViewController = self.tabBarController;
   [self.window makeKeyAndVisible];
