@@ -22,6 +22,7 @@
 		5E2C8D661803B2D40045A963 /* third.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E2C8D621803B2D40045A963 /* third.png */; };
 		5E2C8D691803B2FD0045A963 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2C8D681803B2FD0045A963 /* ThirdViewController.m */; };
 		5E2C8D6C1803B3170045A963 /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2C8D6B1803B3170045A963 /* FourthViewController.m */; };
+		5E7676BE18043921000C05A0 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 5E7676BD18043921000C05A0 /* Podfile */; };
 		5EFCD4BF1803A2ED00B0BD27 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFCD4BE1803A2ED00B0BD27 /* UIKit.framework */; };
 		5EFCD4C11803A2ED00B0BD27 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFCD4C01803A2ED00B0BD27 /* Foundation.framework */; };
 		5EFCD4C31803A2ED00B0BD27 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFCD4C21803A2ED00B0BD27 /* CoreGraphics.framework */; };
@@ -50,6 +51,7 @@
 		5E2C8D681803B2FD0045A963 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		5E2C8D6A1803B3170045A963 /* FourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewController.h; sourceTree = "<group>"; };
 		5E2C8D6B1803B3170045A963 /* FourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
+		5E7676BD18043921000C05A0 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		5EFCD4BB1803A2ED00B0BD27 /* yemaomen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yemaomen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EFCD4BE1803A2ED00B0BD27 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5EFCD4C01803A2ED00B0BD27 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -148,6 +150,7 @@
 		5EFCD4B21803A2ED00B0BD27 = {
 			isa = PBXGroup;
 			children = (
+				5E7676BD18043921000C05A0 /* Podfile */,
 				5EFCD4C41803A2ED00B0BD27 /* yemaomen */,
 				5EFCD4BD1803A2ED00B0BD27 /* Frameworks */,
 				5EFCD4BC1803A2ED00B0BD27 /* Products */,
@@ -259,6 +262,7 @@
 				5E2C8D331803AAC10045A963 /* first.png in Resources */,
 				5E2C8D631803B2D40045A963 /* fourth.png in Resources */,
 				5E2C8D301803AAC10045A963 /* Default-568h@2x.png in Resources */,
+				5E7676BE18043921000C05A0 /* Podfile in Resources */,
 				5E2C8D351803AAC10045A963 /* second.png in Resources */,
 				5E2C8D311803AAC10045A963 /* Default.png in Resources */,
 				5E2C8D661803B2D40045A963 /* third.png in Resources */,
