@@ -23,6 +23,7 @@
 		5E2C8D691803B2FD0045A963 /* YMMThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2C8D681803B2FD0045A963 /* YMMThirdViewController.m */; };
 		5E2C8D6C1803B3170045A963 /* YMMFourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2C8D6B1803B3170045A963 /* YMMFourthViewController.m */; };
 		5E7676BE18043921000C05A0 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 5E7676BD18043921000C05A0 /* Podfile */; };
+		5E88CF001838E8D100E4FF6C /* YMMBaseRefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E88CEFF1838E8D100E4FF6C /* YMMBaseRefreshViewController.m */; };
 		5EFCD4BF1803A2ED00B0BD27 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFCD4BE1803A2ED00B0BD27 /* UIKit.framework */; };
 		5EFCD4C11803A2ED00B0BD27 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFCD4C01803A2ED00B0BD27 /* Foundation.framework */; };
 		5EFCD4C31803A2ED00B0BD27 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFCD4C21803A2ED00B0BD27 /* CoreGraphics.framework */; };
@@ -53,6 +54,8 @@
 		5E2C8D6A1803B3170045A963 /* YMMFourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMMFourthViewController.h; sourceTree = "<group>"; };
 		5E2C8D6B1803B3170045A963 /* YMMFourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMMFourthViewController.m; sourceTree = "<group>"; };
 		5E7676BD18043921000C05A0 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		5E88CEFE1838E8D100E4FF6C /* YMMBaseRefreshViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMMBaseRefreshViewController.h; sourceTree = "<group>"; };
+		5E88CEFF1838E8D100E4FF6C /* YMMBaseRefreshViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMMBaseRefreshViewController.m; sourceTree = "<group>"; };
 		5EFCD4BB1803A2ED00B0BD27 /* yemaomen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yemaomen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EFCD4BE1803A2ED00B0BD27 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5EFCD4C01803A2ED00B0BD27 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -151,6 +154,15 @@
 			path = ThirdTab;
 			sourceTree = "<group>";
 		};
+		5E88CEFD1838E86C00E4FF6C /* BaseClasses */ = {
+			isa = PBXGroup;
+			children = (
+				5E88CEFE1838E8D100E4FF6C /* YMMBaseRefreshViewController.h */,
+				5E88CEFF1838E8D100E4FF6C /* YMMBaseRefreshViewController.m */,
+			);
+			path = BaseClasses;
+			sourceTree = "<group>";
+		};
 		5EFCD4B21803A2ED00B0BD27 = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +196,7 @@
 		5EFCD4C41803A2ED00B0BD27 /* yemaomen */ = {
 			isa = PBXGroup;
 			children = (
+				5E88CEFD1838E86C00E4FF6C /* BaseClasses */,
 				5E2C8D271803AAC10045A963 /* Resources */,
 				5E2C8D3A1803AD350045A963 /* FirstTab */,
 				5E2C8D371803AD350045A963 /* SecondTab */,
@@ -321,6 +334,7 @@
 				5E2C8D3D1803AD350045A963 /* YMMSecondViewController.m in Sources */,
 				5EFCD4CB1803A2EE00B0BD27 /* main.m in Sources */,
 				5E2C8D6C1803B3170045A963 /* YMMFourthViewController.m in Sources */,
+				5E88CF001838E8D100E4FF6C /* YMMBaseRefreshViewController.m in Sources */,
 				5E2C8D691803B2FD0045A963 /* YMMThirdViewController.m in Sources */,
 				5EFCD4CF1803A2EE00B0BD27 /* YMMAppDelegate.m in Sources */,
 				5E2C8D3E1803AD350045A963 /* YMMFirstViewController.m in Sources */,
