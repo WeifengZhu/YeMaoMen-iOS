@@ -1,33 +1,33 @@
 //
-//  FourthViewController.m
+//  FirstViewController.m
 //  yemaomen
 //
 //  Created by Zhu Weifeng on 10/8/13.
 //  Copyright (c) 2013 yemaomen. All rights reserved.
 //
 
-#import "FourthViewController.h"
+#import "YMMFirstViewController.h"
 
-@interface FourthViewController ()
+@interface YMMFirstViewController ()
 
 @end
 
-@implementation FourthViewController
+@implementation YMMFirstViewController
 
 - (id)init
 {
   self = [super init];
   if (self) {
-    self.title = @"我";
-    self.tabBarItem.image = [UIImage imageNamed:@"fourth"];
+    self.title = @"每晚精选";
+    self.tabBarItem.image = [UIImage imageNamed:@"first"];
   }
   return self;
 }
-
+							
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning

@@ -1,5 +1,5 @@
 //
-//  FourthViewController.h
+//  FirstViewController.h
 //  yemaomen
 //
 //  Created by Zhu Weifeng on 10/8/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FourthViewController : UIViewController
+@interface YMMFirstViewController : UIViewController
 
 @end

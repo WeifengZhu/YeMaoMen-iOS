@@ -6,24 +6,24 @@
 //  Copyright (c) 2013 yemaomen. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "YMMAppDelegate.h"
 
-#import "FirstViewController.h"
-#import "SecondViewController.h"
-#import "ThirdViewController.h"
-#import "FourthViewController.h"
+#import "YMMFirstViewController.h"
+#import "YMMSecondViewController.h"
+#import "YMMThirdViewController.h"
+#import "YMMFourthViewController.h"
 
-@implementation AppDelegate
+@implementation YMMAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   // Override point for customization after application launch.
   
-  UIViewController *viewController1 = [[FirstViewController alloc] init];
-  UIViewController *viewController2 = [[SecondViewController alloc] init];
-  UIViewController *viewController3 = [[ThirdViewController alloc] init];
-  UIViewController *viewController4 = [[FourthViewController alloc] init];
+  UIViewController *viewController1 = [[YMMFirstViewController alloc] init];
+  UIViewController *viewController2 = [[YMMSecondViewController alloc] init];
+  UIViewController *viewController3 = [[YMMThirdViewController alloc] init];
+  UIViewController *viewController4 = [[YMMFourthViewController alloc] init];
   self.tabBarController = [[UITabBarController alloc] init];
   self.tabBarController.viewControllers = @[viewController1, viewController2, viewController3, viewController4];
   

@@ -1,25 +1,25 @@
 //
-//  ThirdViewController.m
+//  FourthViewController.m
 //  yemaomen
 //
 //  Created by Zhu Weifeng on 10/8/13.
 //  Copyright (c) 2013 yemaomen. All rights reserved.
 //
 
-#import "ThirdViewController.h"
+#import "YMMFourthViewController.h"
 
-@interface ThirdViewController ()
+@interface YMMFourthViewController ()
 
 @end
 
-@implementation ThirdViewController
+@implementation YMMFourthViewController
 
 - (id)init
 {
   self = [super init];
   if (self) {
-    self.title = @"猫王";
-    self.tabBarItem.image = [UIImage imageNamed:@"third"];
+    self.title = @"我";
+    self.tabBarItem.image = [UIImage imageNamed:@"fourth"];
   }
   return self;
 }

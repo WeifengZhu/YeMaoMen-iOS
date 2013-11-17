@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 yemaomen. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "YMMSecondViewController.h"
 
-@interface SecondViewController ()
+@interface YMMSecondViewController ()
 
 @end
 
-@implementation SecondViewController
+@implementation YMMSecondViewController
 
 - (id)init
 {

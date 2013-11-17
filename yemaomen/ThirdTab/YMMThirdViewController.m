@@ -1,33 +1,33 @@
 //
-//  FirstViewController.m
+//  ThirdViewController.m
 //  yemaomen
 //
 //  Created by Zhu Weifeng on 10/8/13.
 //  Copyright (c) 2013 yemaomen. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "YMMThirdViewController.h"
 
-@interface FirstViewController ()
+@interface YMMThirdViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation YMMThirdViewController
 
 - (id)init
 {
   self = [super init];
   if (self) {
-    self.title = @"每晚精选";
-    self.tabBarItem.image = [UIImage imageNamed:@"first"];
+    self.title = @"猫王";
+    self.tabBarItem.image = [UIImage imageNamed:@"third"];
   }
   return self;
 }
-							
+
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
