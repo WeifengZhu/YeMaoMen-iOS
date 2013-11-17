@@ -18,7 +18,7 @@
 {
   self = [super init];
   if (self) {
-    self.title = @"Second";
+    self.title = @"闲扯";
     self.tabBarItem.image = [UIImage imageNamed:@"second"];
   }
   return self;
