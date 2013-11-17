@@ -236,6 +236,7 @@
 		5EFCD4B31803A2ED00B0BD27 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = YMM;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = yemaomen;
 			};
