@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 yemaomen. All rights reserved.
 //
 
-// TODO 确定加载更多的判断是否和footerView有关？是不是说如果没有设置footerView，无论如何scrollDelegate方法中的判断都不可能达到。加了footerView才可能达到。另外对scrollView进行复习，判断逻辑不太能搞懂。
-
 #import "YMMBaseRefreshViewController.h"
 
 #define kFooterViewHeight 44.0
@@ -67,6 +65,7 @@
 // 在.h文件中声明的别人能调用的方法
 
 // 设置TableView的footerView，当加载更多的时候，需要在footerView上展现一些文字或效果。
+// 是否有footerView也是是否进行load more的一个判断条件。
 - (void)setupLoadMoreFooterView
 {
   if (_footerView == nil) {
@@ -82,14 +81,12 @@
   }
 }
 
+// 设置footerView为nil，load more的时候会判断是否有footerView。
+// 如果已经没有更多内容可以加载了，可以调用这个方法，从而避免继续无效加载。
 - (void)removeLoadMoreFootView
 {
-  if (_footerView)
-  {
-    [_activityIndicatorView removeFromSuperview];
-    _activityIndicatorView = nil;
-    [_footerView removeFromSuperview];
-    _footerView = nil;
+  if (_footerView) {
+    self.tableView.tableFooterView = nil;
   }
 }
 
@@ -126,11 +123,11 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
   // 不正在进行加载更多，并且已经设置了加载更多时候需要展现文字或效果的载体（footerView）。
-  if (!_isLoadingMore && self.tableView.tableFooterView)
-  {
-    CGFloat scrollPosition = scrollView.contentSize.height - scrollView.frame.size.height - scrollView.contentOffset.y;
-    if (scrollPosition < kFooterViewHeight)
-    {
+  if (!_isLoadingMore && self.tableView.tableFooterView) {
+    CGFloat scrollOffset = scrollView.contentSize.height - scrollView.frame.size.height - scrollView.contentOffset.y;
+    // 这个触发条件和是否设置了footerView没有关系。设置footerView的话，contentSize.height和contentOffset.y都会增加，刚好抵消。
+    // 确保有footerView是为了能有地方展现文字或效果。另外，如果已经没有东西可以load more了，就可以通过remove footer，从而避免进入这个判断。
+    if (scrollOffset < 0) {
       [self loadingMoreData];
     }
   }

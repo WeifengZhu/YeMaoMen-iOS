@@ -18,7 +18,7 @@
 @property (nonatomic) BOOL isLoadingMore;
 
 - (void)setupLoadMoreFooterView;
-//- (void)removeLoadMoreFootView;
+- (void)removeLoadMoreFootView;
 
 - (void)loadingLatestData;
 - (void)loadingMoreData;
