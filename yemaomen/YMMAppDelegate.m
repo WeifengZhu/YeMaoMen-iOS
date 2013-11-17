@@ -21,11 +21,15 @@
   // Override point for customization after application launch.
   
   UIViewController *viewController1 = [[YMMFirstViewController alloc] init];
+  UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController:viewController1];
   UIViewController *viewController2 = [[YMMSecondViewController alloc] init];
+  UINavigationController *nav2 = [[UINavigationController alloc] initWithRootViewController:viewController2];
   UIViewController *viewController3 = [[YMMThirdViewController alloc] init];
+  UINavigationController *nav3 = [[UINavigationController alloc] initWithRootViewController:viewController3];
   UIViewController *viewController4 = [[YMMFourthViewController alloc] init];
+  UINavigationController *nav4 = [[UINavigationController alloc] initWithRootViewController:viewController4];
   self.tabBarController = [[UITabBarController alloc] init];
-  self.tabBarController.viewControllers = @[viewController1, viewController2, viewController3, viewController4];
+  self.tabBarController.viewControllers = @[nav1, nav2, nav3, nav4];
   
   self.window.rootViewController = self.tabBarController;
   [self.window makeKeyAndVisible];
