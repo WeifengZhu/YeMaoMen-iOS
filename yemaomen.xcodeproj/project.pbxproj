@@ -49,6 +49,8 @@
 		5E88CF981839EE0700E4FF6C /* NSString+NimbusCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E88CF811839EE0700E4FF6C /* NSString+NimbusCore.m */; };
 		5E88CF9F1839F5AB00E4FF6C /* NIAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E88CF9B1839F5AB00E4FF6C /* NIAttributedLabel.m */; };
 		5E88CFA01839F5AB00E4FF6C /* NSMutableAttributedString+NimbusAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E88CF9E1839F5AB00E4FF6C /* NSMutableAttributedString+NimbusAttributedLabel.m */; };
+		5E88CFA21839F77E00E4FF6C /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E88CFA11839F77E00E4FF6C /* CoreText.framework */; };
+		5E88CFA41839F79100E4FF6C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E88CFA31839F79100E4FF6C /* QuartzCore.framework */; };
 		5EFCD4BF1803A2ED00B0BD27 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFCD4BE1803A2ED00B0BD27 /* UIKit.framework */; };
 		5EFCD4C11803A2ED00B0BD27 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFCD4C01803A2ED00B0BD27 /* Foundation.framework */; };
 		5EFCD4C31803A2ED00B0BD27 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFCD4C21803A2ED00B0BD27 /* CoreGraphics.framework */; };
@@ -137,6 +139,8 @@
 		5E88CF9C1839F5AB00E4FF6C /* NimbusAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NimbusAttributedLabel.h; path = nimbus/src/attributedlabel/src/NimbusAttributedLabel.h; sourceTree = "<group>"; };
 		5E88CF9D1839F5AB00E4FF6C /* NSMutableAttributedString+NimbusAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableAttributedString+NimbusAttributedLabel.h"; path = "nimbus/src/attributedlabel/src/NSMutableAttributedString+NimbusAttributedLabel.h"; sourceTree = "<group>"; };
 		5E88CF9E1839F5AB00E4FF6C /* NSMutableAttributedString+NimbusAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableAttributedString+NimbusAttributedLabel.m"; path = "nimbus/src/attributedlabel/src/NSMutableAttributedString+NimbusAttributedLabel.m"; sourceTree = "<group>"; };
+		5E88CFA11839F77E00E4FF6C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		5E88CFA31839F79100E4FF6C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5EFCD4BB1803A2ED00B0BD27 /* yemaomen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yemaomen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EFCD4BE1803A2ED00B0BD27 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5EFCD4C01803A2ED00B0BD27 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -156,6 +160,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E88CFA41839F79100E4FF6C /* QuartzCore.framework in Frameworks */,
+				5E88CFA21839F77E00E4FF6C /* CoreText.framework in Frameworks */,
 				5EFCD4BF1803A2ED00B0BD27 /* UIKit.framework in Frameworks */,
 				5EFCD4C11803A2ED00B0BD27 /* Foundation.framework in Frameworks */,
 				5EFCD4C31803A2ED00B0BD27 /* CoreGraphics.framework in Frameworks */,
@@ -346,6 +352,8 @@
 		5EFCD4BD1803A2ED00B0BD27 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5E88CFA31839F79100E4FF6C /* QuartzCore.framework */,
+				5E88CFA11839F77E00E4FF6C /* CoreText.framework */,
 				5EFCD4BE1803A2ED00B0BD27 /* UIKit.framework */,
 				5EFCD4C01803A2ED00B0BD27 /* Foundation.framework */,
 				5EFCD4C21803A2ED00B0BD27 /* CoreGraphics.framework */,
