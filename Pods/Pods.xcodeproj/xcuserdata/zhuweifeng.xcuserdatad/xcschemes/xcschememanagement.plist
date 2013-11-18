@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>Pods-JSONKit.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -17,12 +22,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>398C64DF75C048EA8602F6F2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>76F92A22C7F44DA39AD8FCE8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>90CB136251CA40FE8E3AB1C6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>9468E7F01FDB4A329642F15A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AD18AD3C61F540539CA8F007</key>
 		<dict>
 			<key>primary</key>
 			<true/>
