@@ -47,8 +47,6 @@
 		5E88CF961839EE0700E4FF6C /* NIState.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E88CF7D1839EE0700E4FF6C /* NIState.m */; };
 		5E88CF971839EE0700E4FF6C /* NIViewRecycler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E88CF7F1839EE0700E4FF6C /* NIViewRecycler.m */; };
 		5E88CF981839EE0700E4FF6C /* NSString+NimbusCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E88CF811839EE0700E4FF6C /* NSString+NimbusCore.m */; };
-		5E88CF9F1839F5AB00E4FF6C /* NIAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E88CF9B1839F5AB00E4FF6C /* NIAttributedLabel.m */; };
-		5E88CFA01839F5AB00E4FF6C /* NSMutableAttributedString+NimbusAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E88CF9E1839F5AB00E4FF6C /* NSMutableAttributedString+NimbusAttributedLabel.m */; };
 		5E88CFA21839F77E00E4FF6C /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E88CFA11839F77E00E4FF6C /* CoreText.framework */; };
 		5E88CFA41839F79100E4FF6C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E88CFA31839F79100E4FF6C /* QuartzCore.framework */; };
 		5EFCD4BF1803A2ED00B0BD27 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFCD4BE1803A2ED00B0BD27 /* UIKit.framework */; };
@@ -134,11 +132,6 @@
 		5E88CF7F1839EE0700E4FF6C /* NIViewRecycler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NIViewRecycler.m; path = nimbus/src/core/src/NIViewRecycler.m; sourceTree = "<group>"; };
 		5E88CF801839EE0700E4FF6C /* NSString+NimbusCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+NimbusCore.h"; path = "nimbus/src/core/src/NSString+NimbusCore.h"; sourceTree = "<group>"; };
 		5E88CF811839EE0700E4FF6C /* NSString+NimbusCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+NimbusCore.m"; path = "nimbus/src/core/src/NSString+NimbusCore.m"; sourceTree = "<group>"; };
-		5E88CF9A1839F5AB00E4FF6C /* NIAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NIAttributedLabel.h; path = nimbus/src/attributedlabel/src/NIAttributedLabel.h; sourceTree = "<group>"; };
-		5E88CF9B1839F5AB00E4FF6C /* NIAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NIAttributedLabel.m; path = nimbus/src/attributedlabel/src/NIAttributedLabel.m; sourceTree = "<group>"; };
-		5E88CF9C1839F5AB00E4FF6C /* NimbusAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NimbusAttributedLabel.h; path = nimbus/src/attributedlabel/src/NimbusAttributedLabel.h; sourceTree = "<group>"; };
-		5E88CF9D1839F5AB00E4FF6C /* NSMutableAttributedString+NimbusAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableAttributedString+NimbusAttributedLabel.h"; path = "nimbus/src/attributedlabel/src/NSMutableAttributedString+NimbusAttributedLabel.h"; sourceTree = "<group>"; };
-		5E88CF9E1839F5AB00E4FF6C /* NSMutableAttributedString+NimbusAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableAttributedString+NimbusAttributedLabel.m"; path = "nimbus/src/attributedlabel/src/NSMutableAttributedString+NimbusAttributedLabel.m"; sourceTree = "<group>"; };
 		5E88CFA11839F77E00E4FF6C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		5E88CFA31839F79100E4FF6C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5EFCD4BB1803A2ED00B0BD27 /* yemaomen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yemaomen.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -217,13 +210,6 @@
 			path = FirstTab;
 			sourceTree = "<group>";
 		};
-		5E2C8D3F1803B18C0045A963 /* Vendors */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Vendors;
-			sourceTree = "<group>";
-		};
 		5E2C8D5D1803B2370045A963 /* FourthTab */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,7 +240,6 @@
 		5E88CF4D1839EDE400E4FF6C /* Nimbus */ = {
 			isa = PBXGroup;
 			children = (
-				5E88CF991839F58B00E4FF6C /* AttributedLabel */,
 				5E88CF4E1839EDEC00E4FF6C /* Core */,
 			);
 			name = Nimbus;
@@ -318,18 +303,6 @@
 			name = Core;
 			sourceTree = "<group>";
 		};
-		5E88CF991839F58B00E4FF6C /* AttributedLabel */ = {
-			isa = PBXGroup;
-			children = (
-				5E88CF9A1839F5AB00E4FF6C /* NIAttributedLabel.h */,
-				5E88CF9B1839F5AB00E4FF6C /* NIAttributedLabel.m */,
-				5E88CF9C1839F5AB00E4FF6C /* NimbusAttributedLabel.h */,
-				5E88CF9D1839F5AB00E4FF6C /* NSMutableAttributedString+NimbusAttributedLabel.h */,
-				5E88CF9E1839F5AB00E4FF6C /* NSMutableAttributedString+NimbusAttributedLabel.m */,
-			);
-			name = AttributedLabel;
-			sourceTree = "<group>";
-		};
 		5EFCD4B21803A2ED00B0BD27 = {
 			isa = PBXGroup;
 			children = (
@@ -372,7 +345,6 @@
 				5E2C8D5E1803B2370045A963 /* ThirdTab */,
 				5E2C8D5D1803B2370045A963 /* FourthTab */,
 				5EFCD4C51803A2EE00B0BD27 /* Supporting Files */,
-				5E2C8D3F1803B18C0045A963 /* Vendors */,
 			);
 			path = yemaomen;
 			sourceTree = "<group>";
@@ -521,9 +493,7 @@
 				5E88CF871839EE0700E4FF6C /* NIDeviceOrientation.m in Sources */,
 				5EFCD4CF1803A2EE00B0BD27 /* YMMAppDelegate.m in Sources */,
 				5E88CF841839EE0700E4FF6C /* NICommonMetrics.m in Sources */,
-				5E88CF9F1839F5AB00E4FF6C /* NIAttributedLabel.m in Sources */,
 				5E88CF881839EE0700E4FF6C /* NIError.m in Sources */,
-				5E88CFA01839F5AB00E4FF6C /* NSMutableAttributedString+NimbusAttributedLabel.m in Sources */,
 				5E88CF821839EE0700E4FF6C /* NIActions.m in Sources */,
 				5E88CF861839EE0700E4FF6C /* NIDebuggingTools.m in Sources */,
 				5E88CF941839EE0700E4FF6C /* NISDKAvailability.m in Sources */,
