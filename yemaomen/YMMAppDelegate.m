@@ -63,6 +63,14 @@
   // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+// 整体设置App支持的InterfaceOrientations。假设这里设置可以支持多个orientation，而VC里面也设置可以支持多个orientation，那么App实际支持的orientation是这两者的交集。
+- (NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
+{
+  return UIInterfaceOrientationMaskPortrait;
+}
+
+#pragma mark - UITabBarControllerDelegate methods
+
 /*
 // Optional UITabBarControllerDelegate method.
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController

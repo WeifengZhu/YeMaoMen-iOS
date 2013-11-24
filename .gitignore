@@ -5,3 +5,4 @@ build/*
 DerivedData/
 .svn/
 yemaomen.xcodeproj/project.xcworkspace/xcuserdata/*
+yemaomen.xcodeproj/project.xcworkspace/xcshareddata/*

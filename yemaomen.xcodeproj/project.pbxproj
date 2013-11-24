@@ -339,12 +339,12 @@
 			isa = PBXGroup;
 			children = (
 				5E88CEFD1838E86C00E4FF6C /* BaseClasses */,
-				5E2C8D271803AAC10045A963 /* Resources */,
 				5E2C8D3A1803AD350045A963 /* FirstTab */,
 				5E2C8D371803AD350045A963 /* SecondTab */,
 				5E2C8D5E1803B2370045A963 /* ThirdTab */,
 				5E2C8D5D1803B2370045A963 /* FourthTab */,
 				5EFCD4C51803A2EE00B0BD27 /* Supporting Files */,
+				5E2C8D271803AAC10045A963 /* Resources */,
 			);
 			path = yemaomen;
 			sourceTree = "<group>";
