@@ -14,7 +14,7 @@
 #if defined(FINAL_RELEASE)
   #define YMMLOG(format, ...)
 #else
-  #define YMMLOG(format, ...) NSLog([NSString stringWithFormat: format, ## __VA_ARGS__]);
+  #define YMMLOG(format, ...) NSLog(@"%@", [NSString stringWithFormat: format, ## __VA_ARGS__]);
 #endif
 
 // 全局宏定义结束
