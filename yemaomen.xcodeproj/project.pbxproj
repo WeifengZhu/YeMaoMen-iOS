@@ -579,6 +579,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 89AA6B4798E143CBA80C89B3 /* Pods.xcconfig */;
 			buildSettings = {
+				ENABLE_NS_ASSERTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "yemaomen/yemaomen-Prefix.pch";
 				INFOPLIST_FILE = "yemaomen/yemaomen-Info.plist";
@@ -592,6 +593,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 89AA6B4798E143CBA80C89B3 /* Pods.xcconfig */;
 			buildSettings = {
+				ENABLE_NS_ASSERTIONS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "yemaomen/yemaomen-Prefix.pch";
 				INFOPLIST_FILE = "yemaomen/yemaomen-Info.plist";

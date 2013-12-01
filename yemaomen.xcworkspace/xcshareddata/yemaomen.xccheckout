@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>082B0C7E-71FD-4580-BB9A-1ED1B9D4E34D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>yemaomen</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>28944042-9C1D-4601-B603-8F3265C4B99B</key>
+		<string>https://bitbucket.org/zhuweifeng314/yemaomen_ios.git</string>
+		<key>DF94E297-8406-4FDE-9B09-7950BD9A2934</key>
+		<string>https://github.com/jverkoey/nimbus.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>yemaomen.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>28944042-9C1D-4601-B603-8F3265C4B99B</key>
+		<string>..</string>
+		<key>DF94E297-8406-4FDE-9B09-7950BD9A2934</key>
+		<string>../yemaomen/Resources/nimbus</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://bitbucket.org/zhuweifeng314/yemaomen_ios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>28944042-9C1D-4601-B603-8F3265C4B99B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DF94E297-8406-4FDE-9B09-7950BD9A2934</string>
+			<key>IDESourceControlWCCName</key>
+			<string>nimbus</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>28944042-9C1D-4601-B603-8F3265C4B99B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>yemaomen</string>
+		</dict>
+	</array>
+</dict>
+</plist>
