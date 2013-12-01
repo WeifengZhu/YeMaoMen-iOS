@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E257103184B7558008D4FD0 /* YMMUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E257102184B7558008D4FD0 /* YMMUtilities.m */; };
 		5E2C8D301803AAC10045A963 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E2C8D291803AAC10045A963 /* Default-568h@2x.png */; };
 		5E2C8D311803AAC10045A963 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E2C8D2A1803AAC10045A963 /* Default.png */; };
 		5E2C8D321803AAC10045A963 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E2C8D2B1803AAC10045A963 /* Default@2x.png */; };
@@ -59,6 +60,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E257101184B7558008D4FD0 /* YMMUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMMUtilities.h; sourceTree = "<group>"; };
+		5E257102184B7558008D4FD0 /* YMMUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMMUtilities.m; sourceTree = "<group>"; };
 		5E2C8D291803AAC10045A963 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		5E2C8D2A1803AAC10045A963 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		5E2C8D2B1803AAC10045A963 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -354,6 +357,8 @@
 			children = (
 				5EFCD4CD1803A2EE00B0BD27 /* YMMAppDelegate.h */,
 				5EFCD4CE1803A2EE00B0BD27 /* YMMAppDelegate.m */,
+				5E257101184B7558008D4FD0 /* YMMUtilities.h */,
+				5E257102184B7558008D4FD0 /* YMMUtilities.m */,
 				5EFCD4C61803A2EE00B0BD27 /* yemaomen-Info.plist */,
 				5EFCD4C71803A2EE00B0BD27 /* InfoPlist.strings */,
 				5EFCD4CA1803A2EE00B0BD27 /* main.m */,
@@ -499,6 +504,7 @@
 				5E88CF941839EE0700E4FF6C /* NISDKAvailability.m in Sources */,
 				5E88CF8E1839EE0700E4FF6C /* NINetworkActivity.m in Sources */,
 				5E88CF851839EE0700E4FF6C /* NIDataStructures.m in Sources */,
+				5E257103184B7558008D4FD0 /* YMMUtilities.m in Sources */,
 				5E88CF8F1839EE0700E4FF6C /* NINonEmptyCollectionTesting.m in Sources */,
 				5E2C8D3E1803AD350045A963 /* YMMFirstViewController.m in Sources */,
 				5E88CF8D1839EE0700E4FF6C /* NINavigationAppearance.m in Sources */,
