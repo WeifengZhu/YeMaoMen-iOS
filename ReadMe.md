@@ -16,5 +16,5 @@
 
 
 ####版本号
-1. 版本号一般来说有三个数字：4.5.2。4代表大版本，5代表小版本，2代表maintenance release。我们使用两个数字的版本号，即大版本号和小版本号，例如：1.0。
-2. build号：represents an iteration (released or unreleased) of the bundle。我们使用三个数字的build号，例如：1.0.11。build号和版本号有一个对应关系，前两位代表版本号。所以，1.0.11指的是1.0版本后的第11次build。等到状况合适，就要升级版本号，例如1.0版本后的第19次build完成后可以发布1.1版本，那么1.0.19实际上对应于1.1，**另外注意，1.1版本后的第一个build号是1.1.1而不是1.1.0**。
+1. 版本号一般来说有三个数字：4.5.2。4代表大版本，5代表小版本，2代表maintenance release。我们使用两个数字的版本号，即大版本号和小版本号，例如：1.0。版本号会显示在App Store的App页面中。
+2. build号：represents an iteration (released or unreleased) of the bundle。我们使用三个数字的build号，例如：1.0.11。build号和版本号有一个对应关系，前两位代表版本号。所以，1.0.11指的是1.0版本后的第11次build。等到状况合适，就要升级版本号，例如1.0版本后的第19次build完成后可以发布1.1版本，那么1.0.19后的下一个release的对应版本号和build号就是：1.1（version number）和1.1.0(build number)，**另外注意，1.1版本后的第一个build号是1.1.1而不是1.1.0，因为1.1.0已经被用掉了。**。iTunes会根据build号来同步测试App，所以，build号和App测试有关。
