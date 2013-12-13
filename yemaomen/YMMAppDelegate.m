@@ -15,8 +15,18 @@
 
 @implementation YMMAppDelegate
 
+/**
+ 全局异常处理，主要是用来调试的。程序中没有被捕获的异常，会由这个函数统一处理。目前做的操作只是打印出相应的值，方便调试代码，从而去掉异常。
+ */
+void uncaughtExceptionHandler(NSException* exception) {
+  YMMLOG(@"Crash: %@", exception);
+  YMMLOG(@"Exception Description: %@", exception.description);
+  YMMLOG(@"Stack Trace: %@", [exception callStackSymbols]);
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   YMMLOG(@"_cmd: %@", NSStringFromSelector(_cmd));
+  NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
   
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   // Override point for customization after application launch.
