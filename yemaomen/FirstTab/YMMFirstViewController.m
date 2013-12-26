@@ -42,7 +42,15 @@
   YMMLOG(@"class: %@, _cmd: %@",[self class], NSStringFromSelector(_cmd));
   
   [super loadingLatestData];
-  
+  AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+  NSString *urlString = [NSString stringWithFormat:@"%@/topics", ServerHost];
+  [manager GET:urlString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    YMMLOG(@"success, responseObject: %@", responseObject);
+    [self loadLatestFinished];
+  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    YMMLOG(@"failure, error: %@", error);
+    [self loadLatestFinished];
+  }];
 }
 
 - (void)loadingMoreData {

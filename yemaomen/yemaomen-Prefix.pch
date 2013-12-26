@@ -15,5 +15,6 @@
 #import "NimbusCore.h"
 #import "YMMUtilities.h"
 #import "YMMBaseRefreshViewController.h"
+#import <AFNetworking/AFHTTPRequestOperationManager.h>
 
 #endif

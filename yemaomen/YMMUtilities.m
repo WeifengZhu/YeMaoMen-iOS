@@ -8,6 +8,16 @@
 
 #import "YMMUtilities.h"
 
+#ifdef PRODCUTION
+
+NSString *const ServerHost = @"http://localhost:3000";
+
+#else
+
+NSString *const ServerHost = @"http://localhost:3000";
+
+#endif
+
 @implementation YMMUtilities
 
 @end
