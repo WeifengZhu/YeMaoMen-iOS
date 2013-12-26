@@ -83,9 +83,8 @@
     _activityIndicatorView.center = _footerView.center;
     _activityIndicatorView.hidesWhenStopped = YES;
     [_footerView addSubview:_activityIndicatorView];
-    
-    self.tableView.tableFooterView = _footerView;
   }
+  self.tableView.tableFooterView = _footerView;
 }
 
 // 设置footerView为nil，load more的时候会判断是否有footerView。

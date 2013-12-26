@@ -48,10 +48,10 @@
   NSString *urlString = [NSString stringWithFormat:@"%@/posts", ServerHost];
   [self.requestOperationManager GET:urlString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
     YMMLOG(@"success, responseObject: %@", responseObject);
-    [self loadLatestFinished];
-    self.tableViewContents = responseObject;
+    self.tableViewContents = [NSMutableArray arrayWithArray:responseObject];
     [self.tableView reloadData];
     [self setupLoadMoreFooterView];
+    [self loadLatestFinished];
   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     YMMLOG(@"failure, error: %@", error);
     [self loadLatestFinished];
@@ -69,6 +69,15 @@
   NSString *urlString = [NSString stringWithFormat:@"%@/posts", ServerHost];
   [self.requestOperationManager GET:urlString parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
     YMMLOG(@"success, responseObject: %@", responseObject);
+    
+    // 如果服务器返回的数据条数已经小于默认的page_size了，那么就移除加载更多的footer view。
+    // 注意，如果调用API的时候传的page_size不是20的话，这里的值（20）要和具体的page_size对应。
+    if (((NSArray *)responseObject).count < 20) {
+      [self removeLoadMoreFootView];
+    }
+    
+    [self.tableViewContents addObjectsFromArray:responseObject];
+    [self.tableView reloadData];
     [self loadMoreFinished];
   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     YMMLOG(@"failure, error: %@", error);
