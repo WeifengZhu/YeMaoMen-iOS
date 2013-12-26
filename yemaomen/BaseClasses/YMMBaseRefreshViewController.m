@@ -98,6 +98,7 @@
 // 子类需override此方法，来实现loadingLatestData功能。
 // override的时候记得调用[super loadingLatestData];
 - (void)loadingLatestData {
+  YMMLOG(@"class: %@, _cmd: %@",[self class], NSStringFromSelector(_cmd));
   // loadingLatestFinished会end这个refresh
   [self.refreshControl beginRefreshing];
   _isLoadingLatest = YES;
@@ -106,6 +107,7 @@
 // 子类需override此方法，来实现loadingMoreData功能。
 // override的时候记得调用[super loadingMoreData];
 - (void)loadingMoreData {
+  YMMLOG(@"class: %@, _cmd: %@",[self class], NSStringFromSelector(_cmd));
   if (_isLoadingMore) return;
   [_activityIndicatorView startAnimating];
   _isLoadingMore = YES;

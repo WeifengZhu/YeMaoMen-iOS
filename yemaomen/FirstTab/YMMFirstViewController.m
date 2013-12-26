@@ -14,10 +14,10 @@
 
 @implementation YMMFirstViewController
 
-- (id)init
-{
-  self = [super init];
+- (id)initWithStyle:(UITableViewStyle)style {
+  self = [super initWithStyle:style];
   if (self) {
+    // Custom initialization
     self.title = @"每晚精选";
     self.tabBarItem.image = [UIImage imageNamed:@"first"];
   }
@@ -34,6 +34,22 @@
 {
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - data handling
+
+- (void)loadingLatestData {
+  YMMLOG(@"class: %@, _cmd: %@",[self class], NSStringFromSelector(_cmd));
+  
+  [super loadingLatestData];
+  
+}
+
+- (void)loadingMoreData {
+  YMMLOG(@"class: %@, _cmd: %@",[self class], NSStringFromSelector(_cmd));
+  
+  [super loadingMoreData];
+  
 }
 
 @end

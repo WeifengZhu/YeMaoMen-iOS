@@ -83,7 +83,7 @@
 		5E2C8D681803B2FD0045A963 /* YMMThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMMThirdViewController.m; sourceTree = "<group>"; };
 		5E2C8D6A1803B3170045A963 /* YMMFourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMMFourthViewController.h; sourceTree = "<group>"; };
 		5E2C8D6B1803B3170045A963 /* YMMFourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMMFourthViewController.m; sourceTree = "<group>"; };
-		5E7676BD18043921000C05A0 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		5E7676BD18043921000C05A0 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		5E88CEFE1838E8D100E4FF6C /* YMMBaseRefreshViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMMBaseRefreshViewController.h; sourceTree = "<group>"; };
 		5E88CEFF1838E8D100E4FF6C /* YMMBaseRefreshViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMMBaseRefreshViewController.m; sourceTree = "<group>"; };
 		5E88CF4F1839EE0700E4FF6C /* NIActions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NIActions.h; path = nimbus/src/core/src/NIActions.h; sourceTree = "<group>"; };

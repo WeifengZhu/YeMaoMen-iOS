@@ -31,7 +31,7 @@ void uncaughtExceptionHandler(NSException* exception) {
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   // Override point for customization after application launch.
   
-  UIViewController *viewController1 = [[YMMFirstViewController alloc] init];
+  UIViewController *viewController1 = [[YMMFirstViewController alloc] initWithStyle:UITableViewStylePlain];
   UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController:viewController1];
   UIViewController *viewController2 = [[YMMSecondViewController alloc] init];
   UINavigationController *nav2 = [[UINavigationController alloc] initWithRootViewController:viewController2];
