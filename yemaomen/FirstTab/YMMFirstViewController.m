@@ -42,6 +42,7 @@
   YMMLOG(@"class: %@, _cmd: %@",[self class], NSStringFromSelector(_cmd));
   
   [super loadingLatestData];
+  
   AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
   NSString *urlString = [NSString stringWithFormat:@"%@/topics", ServerHost];
   [manager GET:urlString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
