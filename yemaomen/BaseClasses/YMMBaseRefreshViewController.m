@@ -17,6 +17,7 @@
 
 @interface YMMBaseRefreshViewController () {
   /** 子类一般用不到的ivar **/
+  
   // 当TableView被scroll的时候，如果已经到了TableView的下边界（不含tableFooter），如果继续scroll，就会露出这个footerView。
   // 加载更多的时候，就会在这个footerView上显示一些文字或效果（例：让_activityIndicatorView转动起来等）。
   // 本身加载更多的逻辑判断和这个footerView没有关系。可以参看scroll相关的delegate方法。
@@ -24,10 +25,9 @@
   // 显示在footerView上的ActivityIndicator
   UIActivityIndicatorView *_activityIndicatorView;
   
-  
-  /** 子类可以用到的ivar **/
-  // viewDidLoad的时候进行设置，方便后续使用（不需要每次都使用self.tableView.frame.size.width来获取宽度）。
-  CGFloat _screenWidth;
+  // 是否正在进行相关加载的标识。
+  BOOL _isLoadingLatest;
+  BOOL _isLoadingMore;
 }
 
 @end
@@ -58,7 +58,8 @@
   // refreshControl.tintColor = [UIColor colorWithRed:255.0 green:255.0 blue:255.0 alpha:1.0];
   self.refreshControl = refreshControl;
   
-  _screenWidth = self.tableView.frame.size.width;
+  self.screenWidth = self.tableView.frame.size.width;
+  self.requestOperationManager = [AFHTTPRequestOperationManager manager];
 }
 
 - (void)didReceiveMemoryWarning {

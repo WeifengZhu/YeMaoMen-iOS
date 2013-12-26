@@ -12,8 +12,8 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import <AFNetworking/AFHTTPRequestOperationManager.h>
 #import "YMMUtilities.h"
 #import "YMMBaseRefreshViewController.h"
-#import <AFNetworking/AFHTTPRequestOperationManager.h>
 
 #endif

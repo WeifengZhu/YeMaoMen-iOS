@@ -44,9 +44,8 @@
   
   [super loadingLatestData];
   
-  AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
   NSString *urlString = [NSString stringWithFormat:@"%@/topics", ServerHost];
-  [manager GET:urlString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+  [self.requestOperationManager GET:urlString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
     YMMLOG(@"success, responseObject: %@", responseObject);
     [self loadLatestFinished];
   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
