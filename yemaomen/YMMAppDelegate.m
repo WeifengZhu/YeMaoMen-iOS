@@ -33,7 +33,7 @@ void uncaughtExceptionHandler(NSException* exception) {
   
   UIViewController *viewController1 = [[YMMFirstViewController alloc] initWithStyle:UITableViewStylePlain];
   UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController:viewController1];
-  UIViewController *viewController2 = [[YMMSecondViewController alloc] init];
+  UIViewController *viewController2 = [[YMMSecondViewController alloc] initWithStyle:UITableViewStylePlain];
   UINavigationController *nav2 = [[UINavigationController alloc] initWithRootViewController:viewController2];
   UIViewController *viewController3 = [[YMMThirdViewController alloc] init];
   UINavigationController *nav3 = [[UINavigationController alloc] initWithRootViewController:viewController3];
