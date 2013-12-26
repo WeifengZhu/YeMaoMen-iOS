@@ -25,7 +25,7 @@ void uncaughtExceptionHandler(NSException* exception) {
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  YMMLOG(@"_cmd: %@", NSStringFromSelector(_cmd));
+  YMMLOG(@"class: %@, _cmd: %@",[self class], NSStringFromSelector(_cmd));
   NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
   
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

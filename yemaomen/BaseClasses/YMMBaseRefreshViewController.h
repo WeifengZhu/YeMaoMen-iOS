@@ -13,7 +13,7 @@
 // TableView中Cells的数据源。
 @property (nonatomic, strong) NSMutableArray *tableViewContents;
 
-// 是否正在进行相关加载的标示。
+// 是否正在进行相关加载的标识。
 @property (nonatomic) BOOL isLoadingLatest;
 @property (nonatomic) BOOL isLoadingMore;
 
