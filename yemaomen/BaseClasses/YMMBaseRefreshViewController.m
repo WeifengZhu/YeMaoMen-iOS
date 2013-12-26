@@ -122,7 +122,7 @@
 
 // 子类在completeBlock或failBlock中记得调用这个方法([self loadMoreFinished])来收尾。
 - (void)loadMoreFinished {
-  _isLoadingMore = NO;
+  _isLoadingMore = NO; 
   [_activityIndicatorView stopAnimating];
 }
 

@@ -29,6 +29,8 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+  
+  [self loadingLatestData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,6 +65,7 @@
   
   NSString *beforeTimestamp = [self.tableViewContents.lastObject objectForKey:@"updatedAt"];
   NSDictionary *params = @{ @"before_timestamp": beforeTimestamp };
+  YMMLOG(@"params: %@", params);
   NSString *urlString = [NSString stringWithFormat:@"%@/posts", ServerHost];
   [self.requestOperationManager GET:urlString parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
     YMMLOG(@"success, responseObject: %@", responseObject);
