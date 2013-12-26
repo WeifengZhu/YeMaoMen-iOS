@@ -12,7 +12,6 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
-#import "NimbusCore.h"
 #import "YMMUtilities.h"
 #import "YMMBaseRefreshViewController.h"
 #import <AFNetworking/AFHTTPRequestOperationManager.h>
