@@ -50,7 +50,10 @@
   NSString *urlString = [NSString stringWithFormat:@"%@/posts", ServerHost];
   [self.requestOperationManager GET:urlString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
     YMMLOG(@"success, responseObject: %@", responseObject);
-    self.tableViewContents = [NSMutableArray arrayWithArray:responseObject];
+    // 每次加载最新的放在前面，保留已经加载的。
+    NSMutableArray *temp = [NSMutableArray arrayWithArray:responseObject];
+    [temp addObjectsFromArray:self.tableViewContents];
+    self.tableViewContents = temp;
     [self.tableView reloadData];
     [self setupLoadMoreFooterView];
     [self loadLatestFinished];

@@ -47,6 +47,10 @@
   NSString *urlString = [NSString stringWithFormat:@"%@/topics", ServerHost];
   [self.requestOperationManager GET:urlString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
     YMMLOG(@"success, responseObject: %@", responseObject);
+    // 每次加载最新的放在前面，保留已经加载的。
+    NSMutableArray *temp = [NSMutableArray arrayWithArray:responseObject];
+    [temp addObjectsFromArray:self.tableViewContents];
+    self.tableViewContents = temp;
     [self loadLatestFinished];
   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     YMMLOG(@"failure, error: %@", error);
