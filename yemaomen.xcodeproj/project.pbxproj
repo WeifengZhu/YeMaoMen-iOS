@@ -31,7 +31,6 @@
 		5EE6FC6F186C722200FBF6FB /* UIView+frameAdjust.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE6FC6E186C722200FBF6FB /* UIView+frameAdjust.m */; };
 		5EE6FC76186D280D00FBF6FB /* YMMSecondViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE6FC75186D280D00FBF6FB /* YMMSecondViewCell.m */; };
 		5EE6FC79186D2F9600FBF6FB /* YMMBaseCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE6FC78186D2F9600FBF6FB /* YMMBaseCustomCell.m */; };
-		5EE6FC7C186D31F100FBF6FB /* YMMBaseCustomCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE6FC7B186D31F100FBF6FB /* YMMBaseCustomCellView.m */; };
 		5EFCD4BF1803A2ED00B0BD27 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFCD4BE1803A2ED00B0BD27 /* UIKit.framework */; };
 		5EFCD4C11803A2ED00B0BD27 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFCD4C01803A2ED00B0BD27 /* Foundation.framework */; };
 		5EFCD4C31803A2ED00B0BD27 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFCD4C21803A2ED00B0BD27 /* CoreGraphics.framework */; };
@@ -75,8 +74,6 @@
 		5EE6FC75186D280D00FBF6FB /* YMMSecondViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMMSecondViewCell.m; sourceTree = "<group>"; };
 		5EE6FC77186D2F9600FBF6FB /* YMMBaseCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMMBaseCustomCell.h; sourceTree = "<group>"; };
 		5EE6FC78186D2F9600FBF6FB /* YMMBaseCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMMBaseCustomCell.m; sourceTree = "<group>"; };
-		5EE6FC7A186D31F100FBF6FB /* YMMBaseCustomCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMMBaseCustomCellView.h; sourceTree = "<group>"; };
-		5EE6FC7B186D31F100FBF6FB /* YMMBaseCustomCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMMBaseCustomCellView.m; sourceTree = "<group>"; };
 		5EFCD4BB1803A2ED00B0BD27 /* yemaomen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yemaomen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EFCD4BE1803A2ED00B0BD27 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5EFCD4C01803A2ED00B0BD27 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -179,8 +176,6 @@
 				5E88CEFF1838E8D100E4FF6C /* YMMBaseRefreshViewController.m */,
 				5EE6FC77186D2F9600FBF6FB /* YMMBaseCustomCell.h */,
 				5EE6FC78186D2F9600FBF6FB /* YMMBaseCustomCell.m */,
-				5EE6FC7A186D31F100FBF6FB /* YMMBaseCustomCellView.h */,
-				5EE6FC7B186D31F100FBF6FB /* YMMBaseCustomCellView.m */,
 			);
 			path = BaseClasses;
 			sourceTree = "<group>";
@@ -366,7 +361,6 @@
 				5E2C8D6C1803B3170045A963 /* YMMFourthViewController.m in Sources */,
 				5EE6FC76186D280D00FBF6FB /* YMMSecondViewCell.m in Sources */,
 				5E88CF001838E8D100E4FF6C /* YMMBaseRefreshViewController.m in Sources */,
-				5EE6FC7C186D31F100FBF6FB /* YMMBaseCustomCellView.m in Sources */,
 				5EE6FC79186D2F9600FBF6FB /* YMMBaseCustomCell.m in Sources */,
 				5E2C8D691803B2FD0045A963 /* YMMThirdViewController.m in Sources */,
 				5EFCD4CF1803A2EE00B0BD27 /* YMMAppDelegate.m in Sources */,

@@ -7,7 +7,29 @@
 //
 
 #import "YMMBaseCustomCell.h"
-#import "YMMBaseCustomCellView.h"
+
+// YMMBaseCustomCellView这个类只会被YMMBaseCustomCell用到，所以放到这里。
+@interface YMMBaseCustomCellView : UIView
+
+@end
+
+@implementation YMMBaseCustomCellView
+
+- (id)initWithFrame:(CGRect)frame {
+  self = [super initWithFrame:frame];
+  if (self) {
+    // Initialization code
+  }
+  return self;
+}
+
+- (void)drawRect:(CGRect)rect {
+  // iOS 7中的Cell层次发生了变化。
+  // http://www.curiousfind.com/blog/646
+	[(YMMBaseCustomCell *)[[self superview] superview] drawCellContentView:rect];
+}
+
+@end
 
 @implementation YMMBaseCustomCell
 
