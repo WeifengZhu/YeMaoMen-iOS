@@ -31,6 +31,8 @@
 		5EE6FC6F186C722200FBF6FB /* UIView+frameAdjust.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE6FC6E186C722200FBF6FB /* UIView+frameAdjust.m */; };
 		5EE6FC76186D280D00FBF6FB /* YMMSecondViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE6FC75186D280D00FBF6FB /* YMMSecondViewCell.m */; };
 		5EE6FC79186D2F9600FBF6FB /* YMMBaseCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE6FC78186D2F9600FBF6FB /* YMMBaseCustomCell.m */; };
+		5EE6FC80186D637700FBF6FB /* YMMPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE6FC7F186D637700FBF6FB /* YMMPost.m */; };
+		5EE6FC83186D651F00FBF6FB /* YMMUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE6FC82186D651F00FBF6FB /* YMMUser.m */; };
 		5EFCD4BF1803A2ED00B0BD27 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFCD4BE1803A2ED00B0BD27 /* UIKit.framework */; };
 		5EFCD4C11803A2ED00B0BD27 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFCD4C01803A2ED00B0BD27 /* Foundation.framework */; };
 		5EFCD4C31803A2ED00B0BD27 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFCD4C21803A2ED00B0BD27 /* CoreGraphics.framework */; };
@@ -74,6 +76,10 @@
 		5EE6FC75186D280D00FBF6FB /* YMMSecondViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMMSecondViewCell.m; sourceTree = "<group>"; };
 		5EE6FC77186D2F9600FBF6FB /* YMMBaseCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMMBaseCustomCell.h; sourceTree = "<group>"; };
 		5EE6FC78186D2F9600FBF6FB /* YMMBaseCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMMBaseCustomCell.m; sourceTree = "<group>"; };
+		5EE6FC7E186D637700FBF6FB /* YMMPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMMPost.h; sourceTree = "<group>"; };
+		5EE6FC7F186D637700FBF6FB /* YMMPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMMPost.m; sourceTree = "<group>"; };
+		5EE6FC81186D651F00FBF6FB /* YMMUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMMUser.h; sourceTree = "<group>"; };
+		5EE6FC82186D651F00FBF6FB /* YMMUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMMUser.m; sourceTree = "<group>"; };
 		5EFCD4BB1803A2ED00B0BD27 /* yemaomen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yemaomen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EFCD4BE1803A2ED00B0BD27 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5EFCD4C01803A2ED00B0BD27 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -180,6 +186,17 @@
 			path = BaseClasses;
 			sourceTree = "<group>";
 		};
+		5EE6FC7D186D634900FBF6FB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5EE6FC7E186D637700FBF6FB /* YMMPost.h */,
+				5EE6FC7F186D637700FBF6FB /* YMMPost.m */,
+				5EE6FC81186D651F00FBF6FB /* YMMUser.h */,
+				5EE6FC82186D651F00FBF6FB /* YMMUser.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		5EFCD4B21803A2ED00B0BD27 = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +232,7 @@
 		5EFCD4C41803A2ED00B0BD27 /* yemaomen */ = {
 			isa = PBXGroup;
 			children = (
+				5EE6FC7D186D634900FBF6FB /* Models */,
 				5E88CEFD1838E86C00E4FF6C /* BaseClasses */,
 				5E2C8D3A1803AD350045A963 /* FirstTab */,
 				5E2C8D371803AD350045A963 /* SecondTab */,
@@ -360,10 +378,12 @@
 				5EFCD4CB1803A2EE00B0BD27 /* main.m in Sources */,
 				5E2C8D6C1803B3170045A963 /* YMMFourthViewController.m in Sources */,
 				5EE6FC76186D280D00FBF6FB /* YMMSecondViewCell.m in Sources */,
+				5EE6FC80186D637700FBF6FB /* YMMPost.m in Sources */,
 				5E88CF001838E8D100E4FF6C /* YMMBaseRefreshViewController.m in Sources */,
 				5EE6FC79186D2F9600FBF6FB /* YMMBaseCustomCell.m in Sources */,
 				5E2C8D691803B2FD0045A963 /* YMMThirdViewController.m in Sources */,
 				5EFCD4CF1803A2EE00B0BD27 /* YMMAppDelegate.m in Sources */,
+				5EE6FC83186D651F00FBF6FB /* YMMUser.m in Sources */,
 				5E257103184B7558008D4FD0 /* YMMUtilities.m in Sources */,
 				5E2C8D3E1803AD350045A963 /* YMMFirstViewController.m in Sources */,
 			);
