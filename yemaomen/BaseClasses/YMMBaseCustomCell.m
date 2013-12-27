@@ -27,6 +27,8 @@
   // iOS 7中的Cell层次发生了变化。
   // http://www.curiousfind.com/blog/646
 	[(YMMBaseCustomCell *)[[self superview] superview] drawCellContentView:rect];
+  // 如果要兼容iOS 6的话，要加个判断，然后使用下面的代码。
+//  [(YMMBaseCustomCell *)[self superview] drawCellContentView:rect];
 }
 
 @end
@@ -53,6 +55,14 @@
 - (void)setNeedsDisplay {
 	[super setNeedsDisplay];
 	[_customContentView setNeedsDisplay];
+}
+
+- (void)layoutSubviews {
+  // 因为在初始化customContentView的时候，没有设置frame的大小。
+  // 所以需要实现此方法，来给customContentView设置frame。
+  CGRect bounds = [self bounds];
+	[self.customContentView setFrame:bounds];
+  [super layoutSubviews];
 }
 
 - (void)drawCellContentView:(CGRect)rect {
