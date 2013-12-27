@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YMMBaseCustomCell.h"
 
-@interface YMMSecondViewCell : UITableViewCell
+@interface YMMSecondViewCell : YMMBaseCustomCell
 
 @property (nonatomic, strong) NSString *cellContent;
 

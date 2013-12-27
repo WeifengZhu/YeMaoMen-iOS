@@ -8,6 +8,7 @@
 
 #import "YMMSecondViewController.h"
 #import "YMMSecondViewCell.h"
+#import "YMMFirstViewController.h"
 
 @interface YMMSecondViewController () {
   
@@ -103,7 +104,6 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  [NSThread sleepForTimeInterval:2.0];
   [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

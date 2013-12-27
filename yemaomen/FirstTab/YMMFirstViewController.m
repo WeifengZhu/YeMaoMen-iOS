@@ -29,7 +29,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
   
   // 加载最新数据
-  [self loadingLatestData];
+//  [self loadingLatestData];
 }
 
 - (void)didReceiveMemoryWarning {

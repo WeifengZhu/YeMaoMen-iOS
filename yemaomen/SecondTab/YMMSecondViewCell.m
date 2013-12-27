@@ -24,14 +24,24 @@
     // Configure the view for the selected state
 }
 
-- (void)drawRect:(CGRect)rect {
+- (void)layoutSubviews {
+  // 因为父类在初始化customContentView的时候，没有设置frame的大小。
+  // 所以需要实现此方法，来给customContentView设置frame。
+  CGRect bounds = [self bounds];
+	[self.customContentView setFrame:bounds];
+  [super layoutSubviews];
+}
+
+#pragma mark - super class methods implementation
+
+- (void)drawCellContentView:(CGRect)rect {
   YMMLOG(@"class: %@, _cmd: %@",[self class], NSStringFromSelector(_cmd));
   
   CGContextRef context = UIGraphicsGetCurrentContext();
   
-	UIColor *backgroundColor = [UIColor redColor];
+	UIColor *backgroundColor = [UIColor whiteColor];
 	UIColor *textColor = [UIColor blackColor];
-	if(self.selected) {
+	if(self.highlighted) {
 		backgroundColor = [UIColor grayColor];
 		textColor = [UIColor whiteColor];
 	}
