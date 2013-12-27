@@ -7,6 +7,7 @@
 //
 
 #import "YMMSecondViewController.h"
+#import "YMMSecondViewCell.h"
 
 @interface YMMSecondViewController () {
   
@@ -93,12 +94,17 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   static NSString *CellIdentifier = @"CellIdentifier";
-  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+  YMMSecondViewCell *cell = (YMMSecondViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
   if (!cell) {
-    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    cell = [[YMMSecondViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
   }
-  cell.textLabel.text = [self.tableViewContents[indexPath.row] valueForKey:@"content"];
+  cell.cellContent = [self.tableViewContents[indexPath.row] valueForKey:@"content"];
   return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  [NSThread sleepForTimeInterval:2.0];
+  [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end
