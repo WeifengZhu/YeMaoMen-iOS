@@ -74,6 +74,12 @@ void uncaughtExceptionHandler(NSException* exception) {
   return UIInterfaceOrientationMaskPortrait;
 }
 
+/* Block回调的一个例子，在实现的时候，记得给handler一个UIBackgroundFetchResult类型的值，让这个block能够执行。
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))handler {
+  
+}
+*/
+
 #pragma mark - UITabBarControllerDelegate methods
 
 /*
