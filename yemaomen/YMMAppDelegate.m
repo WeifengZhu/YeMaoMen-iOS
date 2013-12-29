@@ -43,6 +43,8 @@ void uncaughtExceptionHandler(NSException* exception) {
   self.tabBarController.viewControllers = @[nav1, nav2, nav3, nav4];
   
   self.window.rootViewController = self.tabBarController;
+  // 设置整个App的tintColor：
+//  self.window.tintColor = [UIColor redColor];
   [self.window makeKeyAndVisible];
   return YES;
 }
