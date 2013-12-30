@@ -9,6 +9,7 @@
 #import "YMMSecondViewController.h"
 #import "YMMSecondViewCell.h"
 #import "YMMFirstViewController.h"
+#import "YMMPost.h"
 
 @interface YMMSecondViewController () {
   
@@ -47,15 +48,29 @@
   
   [super loadingLatestData];
   
+  NSDictionary *params;
+  if (self.tableViewContents.count != 0) {
+    // 如果下拉刷新的时候，tableView中已经有数据。
+    params = @{ @"after_timestamp": ((YMMPost *)self.tableViewContents.firstObject).updatedAt };
+  }
+  YMMLOG(@"params: %@", params);
+  
   NSString *urlString = [NSString stringWithFormat:@"%@/posts", ServerHost];
-  [self.requestOperationManager GET:urlString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+  [self.requestOperationManager GET:urlString parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
     YMMLOG(@"success, responseObject: %@", responseObject);
-    // 每次加载最新的放在前面，保留已经加载的。
-    NSMutableArray *temp = [NSMutableArray arrayWithArray:responseObject];
-    [temp addObjectsFromArray:self.tableViewContents];
-    self.tableViewContents = temp;
-    [self.tableView reloadData];
-    [self setupLoadMoreFooterView];
+    
+    if (((NSArray *)responseObject).count > 0) {
+      // 解析：将NSDictionary数组转换成YMMPost数组
+      NSArray *parsedResponseObject = [self parseResponseObject:responseObject];
+      
+      // 每次加载最新的放在前面，保留已经加载的。
+      NSMutableArray *temp = [NSMutableArray arrayWithArray:parsedResponseObject];
+      [temp addObjectsFromArray:self.tableViewContents];
+      self.tableViewContents = temp;
+      [self.tableView reloadData];
+      [self setupLoadMoreFooterView];
+    }
+    
     [self loadLatestFinished];
   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     YMMLOG(@"failure, error: %@", error);
@@ -68,9 +83,10 @@
   
   [super loadingMoreData];
   
-  NSString *beforeTimestamp = [self.tableViewContents.lastObject objectForKey:@"updatedAt"];
+  NSString *beforeTimestamp = ((YMMPost *)self.tableViewContents.lastObject).updatedAt;
   NSDictionary *params = @{ @"before_timestamp": beforeTimestamp };
   YMMLOG(@"params: %@", params);
+  
   NSString *urlString = [NSString stringWithFormat:@"%@/posts", ServerHost];
   [self.requestOperationManager GET:urlString parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
     YMMLOG(@"success, responseObject: %@", responseObject);
@@ -81,13 +97,33 @@
       [self removeLoadMoreFootView];
     }
     
-    [self.tableViewContents addObjectsFromArray:responseObject];
-    [self.tableView reloadData];
+    if (((NSArray *)responseObject).count > 0) {
+      // 解析：将NSDictionary数组转换成YMMPost数组
+      NSArray *parsedResponseObject = [self parseResponseObject:responseObject];
+      [self.tableViewContents addObjectsFromArray:parsedResponseObject];
+      [self.tableView reloadData];
+    }
+    
     [self loadMoreFinished];
   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     YMMLOG(@"failure, error: %@", error);
     [self loadMoreFinished];
   }];
+}
+
+/**
+ 将API请求获取的基本类型数据（NSDictionary）数组转换成Model类型（YMMPost）数组。
+ @param responseObject
+ API请求返回的结果数组（NSDictionary数组）。
+ @return 解析过后的Model数组（YMMPost数组）。
+ */
+- (NSMutableArray *)parseResponseObject:(NSArray *)responseObject {
+  NSMutableArray *result = [NSMutableArray array];
+  for (id object in responseObject) {
+    YMMPost *post = [[YMMPost alloc] initWithDictionary:object];
+    [result addObject:post];
+  }
+  return result;
 }
 
 #pragma mark - table view methods
