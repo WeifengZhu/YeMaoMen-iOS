@@ -36,6 +36,9 @@ FOUNDATION_EXPORT NSString *const ServerHost;
 
 @interface YMMUtilities : NSObject
 
+@property (nonatomic, strong) NSCache *secondViewCellHeightCache;
+
++ (YMMUtilities *)sharedInstance;
 + (UIColor *)cellHighlightedGrayColor;
 
 @end

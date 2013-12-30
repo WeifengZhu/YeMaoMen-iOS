@@ -150,7 +150,14 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-  return [YMMSecondViewCell cellHeightForPost:self.tableViewContents[indexPath.row]];
+  NSString *cacheKey = [NSString stringWithFormat:@"%d%d", indexPath.section, indexPath.row];
+  NSCache *cellHeightCache = [YMMUtilities sharedInstance].secondViewCellHeightCache;
+  NSNumber *height = [cellHeightCache objectForKey:cacheKey];
+  if (!height) {
+    height = @([YMMSecondViewCell cellHeightForPost:self.tableViewContents[indexPath.row]]);
+    [cellHeightCache setObject:height forKey:cacheKey];
+  }
+  return [height floatValue];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
