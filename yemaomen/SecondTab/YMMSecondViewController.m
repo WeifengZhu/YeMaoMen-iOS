@@ -138,12 +138,23 @@
   if (!cell) {
     cell = [[YMMSecondViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
   }
-  cell.cellContent = [self.tableViewContents[indexPath.row] valueForKey:@"content"];
+  YMMPost *post = self.tableViewContents[indexPath.row];
+  cell.name = post.user.username;
+  cell.likeCount = [post.likeCount isKindOfClass:[NSNull class]] ? @"0 赞" : [NSString stringWithFormat:@"%@ 赞", post.likeCount];
+  cell.content = post.content;
   return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+  return [YMMSecondViewCell cellHeightForPost:self.tableViewContents[indexPath.row]];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+  return 30.0;
 }
 
 @end

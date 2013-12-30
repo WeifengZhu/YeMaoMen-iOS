@@ -28,6 +28,7 @@
     if (dict[@"id"]) self.ID = dict[@"id"];
     if (dict[@"content"]) self.content = dict[@"content"];
     if (dict[@"topicID"]) self.topicID = dict[@"topicID"];
+    if (dict[@"likeCount"]) self.likeCount = dict[@"likeCount"];
     if (dict[@"updatedAt"]) self.updatedAt = dict[@"updatedAt"];
     if (dict[@"user"]) self.user = [[YMMUser alloc] initWithDictionary:dict[@"user"]];
     if (dict[@"parentPost"]) self.parentPost = [[YMMPost alloc] initWithDictionary:dict[@"parentPost"]];
