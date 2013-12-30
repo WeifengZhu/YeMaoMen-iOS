@@ -36,4 +36,6 @@ FOUNDATION_EXPORT NSString *const ServerHost;
 
 @interface YMMUtilities : NSObject
 
++ (UIColor *)cellHighlightedGrayColor;
+
 @end

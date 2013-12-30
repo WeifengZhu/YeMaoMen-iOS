@@ -73,19 +73,12 @@ static CGFloat ContentRightMargin; // 内容距右边的距离
   
 	UIColor *backgroundColor = [UIColor whiteColor];
 	if(self.highlighted) {
-		backgroundColor = [UIColor grayColor];
+		backgroundColor = [YMMUtilities cellHighlightedGrayColor];
 	}
 	
   // 画背景
 	[backgroundColor set];
 	CGContextFillRect(context, rect);
-	
-  // 画字
-//	CGPoint point;
-//	point.x = 42;
-//	point.y = 9;
-//	[textColor set];
-//	[self.content drawAtPoint:point withAttributes:nil];
   
   // 画name
   [self.name drawAtPoint:CGPointMake(NameLeftMargin, NameTopMargin) withAttributes:@{ NSFontAttributeName: NameFont,
