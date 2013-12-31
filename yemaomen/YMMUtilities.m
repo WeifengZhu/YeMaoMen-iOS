@@ -14,9 +14,9 @@ NSString *const ServerHost = @"http://localhost:3000";
 
 #else
 
-//NSString *const ServerHost = @"http://192.168.32.198:3000";
+NSString *const ServerHost = @"http://192.168.32.186:3000";
 //NSString *const ServerHost = @"http://192.168.1.104:3000";
-NSString *const ServerHost = @"http://localhost:3000";
+//NSString *const ServerHost = @"http://localhost:3000";
 
 #endif
 

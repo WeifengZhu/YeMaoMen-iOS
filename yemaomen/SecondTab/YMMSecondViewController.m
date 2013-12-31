@@ -157,8 +157,4 @@
   return [height floatValue];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
-  return 30.0;
-}
-
 @end
