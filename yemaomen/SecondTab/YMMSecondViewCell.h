@@ -13,9 +13,7 @@
 
 @interface YMMSecondViewCell : YMMBaseCustomCell
 
-@property (nonatomic, strong) NSString *content;
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *likeCount;
+@property (nonatomic, strong) YMMPost *post;
 
 + (CGFloat)cellHeightForPost:(YMMPost *)post;
 

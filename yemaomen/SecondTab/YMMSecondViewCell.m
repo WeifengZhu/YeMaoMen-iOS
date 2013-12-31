@@ -81,40 +81,31 @@ static CGFloat ContentRightMargin; // 内容距右边的距离
 	CGContextFillRect(context, rect);
   
   // 画name
-  [self.name drawAtPoint:CGPointMake(NameLeftMargin, NameTopMargin) withAttributes:@{ NSFontAttributeName: NameFont,
-                                                                                      NSForegroundColorAttributeName: [UIColor blackColor] }];
+  [self.post.user.username drawAtPoint:CGPointMake(NameLeftMargin, NameTopMargin) withAttributes:@{ NSFontAttributeName: NameFont,
+                                                                                                    NSForegroundColorAttributeName: [UIColor blackColor] }];
   // 画x 赞
   NSMutableParagraphStyle *style = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
   [style setAlignment:NSTextAlignmentRight];
-  [self.likeCount drawInRect:CGRectMake(0, LikeTopMargin, rect.size.width - LikeRightMargin, LikeHeight)
-              withAttributes:@{ NSParagraphStyleAttributeName: style,
-                                NSFontAttributeName: LikeFont,
-                                NSForegroundColorAttributeName: [UIColor grayColor] }];
+  NSString *likeCountString = [self.post.likeCount isKindOfClass:[NSNull class]] ? @"0 赞" : [NSString stringWithFormat:@"%@ 赞", self.post.likeCount];
+  [likeCountString drawInRect:CGRectMake(0, LikeTopMargin, rect.size.width - LikeRightMargin, LikeHeight)
+               withAttributes:@{ NSParagraphStyleAttributeName: style,
+                                 NSFontAttributeName: LikeFont,
+                                 NSForegroundColorAttributeName: [UIColor grayColor] }];
   
   // 画内容
-  [self.content drawInRect:CGRectMake(ContentLeftMargin,
-                                      NameTopMargin + NameHeight + ContentTopMargin,
-                                      rect.size.width - ContentLeftMargin - ContentRightMargin,
-                                      CGFLOAT_MAX)
-            withAttributes:@{ NSFontAttributeName: ContentFont,
-                              NSForegroundColorAttributeName: [UIColor blackColor] }];
+  [self.post.content drawInRect:CGRectMake(ContentLeftMargin,
+                                           NameTopMargin + NameHeight + ContentTopMargin,
+                                           rect.size.width - ContentLeftMargin - ContentRightMargin,
+                                           CGFLOAT_MAX)
+                 withAttributes:@{ NSFontAttributeName: ContentFont,
+                                   NSForegroundColorAttributeName: [UIColor blackColor] }];
 }
 
 #pragma mark - custom setters & getters
 
 // override这个setter是因为要加setNeedsDisplay。
-- (void)setContent:(NSString *)content {
-  _content = content;
-  [self setNeedsDisplay];
-}
-
-- (void)setName:(NSString *)name {
-  _name = name;
-  [self setNeedsDisplay];
-}
-
-- (void)setLikeCount:(NSString *)likeCount {
-  _likeCount = likeCount;
+- (void)setPost:(YMMPost *)post {
+  _post = post;
   [self setNeedsDisplay];
 }
 

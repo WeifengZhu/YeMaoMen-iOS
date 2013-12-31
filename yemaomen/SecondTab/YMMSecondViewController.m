@@ -138,10 +138,7 @@
   if (!cell) {
     cell = [[YMMSecondViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
   }
-  YMMPost *post = self.tableViewContents[indexPath.row];
-  cell.name = post.user.username;
-  cell.likeCount = [post.likeCount isKindOfClass:[NSNull class]] ? @"0 赞" : [NSString stringWithFormat:@"%@ 赞", post.likeCount];
-  cell.content = post.content;
+  cell.post = self.tableViewContents[indexPath.row];
   return cell;
 }
 
