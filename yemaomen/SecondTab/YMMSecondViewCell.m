@@ -11,7 +11,8 @@
 #import "UIView+frameAdjust.h"
 
 @interface YMMSecondViewCell () {
-  CGFloat _parentBaselineY; // 直接回复的post的baseline（底部框线）的y坐标
+  // parent post的baseline的y坐标。这个值初始化为parent post的顶部，parent post是基于这个y的相对值来画的，当一个parent post画完的时候，这个值被设置为parent post的底部，也就是下一个parent post的顶部。依次类推。注意parent post被画的顺序和被回复的顺序是反过来的。
+  CGFloat _parentBaselineY;
   NSMutableParagraphStyle *_paragraphStyle;
 }
 
@@ -118,6 +119,11 @@ static UIFont *LikeFontParent = nil; // 回复中x 赞的字体
     [self recursivlyDrawParentPost:parentPost.parentPost];
   }
   // 实际画的代码
+  
+  // 计算这个parent post的高度。两个作用：
+  // 1. 用于画这个parent post的背景框 2. 后续更新_parentBaselineY。
+  CGFloat parentCellHeight = [YMMSecondViewCell parentCellHeightWithContent:parentPost.content];
+  
   // 画name
   [parentPost.user.username drawAtPoint:CGPointMake(NameLeftMargin * 2, NameTopMargin + _parentBaselineY )
                          withAttributes:@{ NSFontAttributeName: NameFontParent,
@@ -135,8 +141,8 @@ static UIFont *LikeFontParent = nil; // 回复中x 赞的字体
                                       CGFLOAT_MAX)
             withAttributes:@{ NSFontAttributeName: ContentFont,
                               NSForegroundColorAttributeName: [UIColor blackColor] }];
-  // 计算这个parent cell的高度，更新_parentBaselineY。
-  CGFloat parentCellHeight = [YMMSecondViewCell parentCellHeightWithContent:parentPost.content];
+  
+  
   _parentBaselineY += parentCellHeight;
 }
 
@@ -160,8 +166,6 @@ static UIFont *LikeFontParent = nil; // 回复中x 赞的字体
   
   if (self.post.parentPost) {
     [self recursivlyDrawParentPost:self.post.parentPost];
-  } else {
-    _parentBaselineY = 0.0;
   }
   
   // 画name
