@@ -39,6 +39,10 @@ FOUNDATION_EXPORT NSString *const ServerHost;
 @property (nonatomic, strong) NSCache *secondViewCellHeightCache;
 
 + (YMMUtilities *)sharedInstance;
+
 + (UIColor *)cellHighlightedGrayColor;
++ (UIColor *)parentPostFillColor;
++ (UIColor *)parentPostBorderColor;
++ (UIColor *)colorFromRGBString:(NSString *)stringToConvert;
 
 @end

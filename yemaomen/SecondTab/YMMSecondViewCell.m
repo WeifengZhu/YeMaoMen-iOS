@@ -118,11 +118,24 @@ static UIFont *LikeFontParent = nil; // 回复中x 赞的字体
   if (parentPost.parentPost) {
     [self recursivlyDrawParentPost:parentPost.parentPost];
   }
+  
   // 实际画的代码
   
   // 计算这个parent post的高度。两个作用：
-  // 1. 用于画这个parent post的背景框 2. 后续更新_parentBaselineY。
+  // 1. 用于画这个parent post的背景框 2. 更新_parentBaselineY
   CGFloat parentCellHeight = [YMMSecondViewCell parentCellHeightWithContent:parentPost.content];
+  // 1. 用于画这个parent post的背景框
+  CGContextRef context = UIGraphicsGetCurrentContext();
+  CGContextSetLineWidth(context, 1.0);
+  CGContextSetStrokeColorWithColor(context, [YMMUtilities parentPostBorderColor].CGColor);
+  CGRect rect = CGRectMake(ContentLeftMargin + 5,
+                           _parentBaselineY,
+                           [UIScreen mainScreen].bounds.size.width - ContentLeftMargin - ContentRightMargin - 10,
+                           parentCellHeight);
+  CGContextAddRect(context, rect);
+  CGContextStrokePath(context);
+  CGContextSetFillColorWithColor(context, [YMMUtilities parentPostFillColor].CGColor);
+  CGContextFillRect(context, rect);
   
   // 画name
   [parentPost.user.username drawAtPoint:CGPointMake(NameLeftMargin * 2, NameTopMargin + _parentBaselineY )
@@ -142,7 +155,7 @@ static UIFont *LikeFontParent = nil; // 回复中x 赞的字体
             withAttributes:@{ NSFontAttributeName: ContentFont,
                               NSForegroundColorAttributeName: [UIColor blackColor] }];
   
-  
+  // 2. 更新_parentBaselineY
   _parentBaselineY += parentCellHeight;
 }
 
@@ -156,9 +169,9 @@ static UIFont *LikeFontParent = nil; // 回复中x 赞的字体
   
 	UIColor *backgroundColor = [UIColor whiteColor];
   // highlighted的时候用同一种背景色
-//	if(self.highlighted) {
-//		backgroundColor = [YMMUtilities cellHighlightedGrayColor];
-//	}
+	if(self.highlighted) {
+		backgroundColor = [YMMUtilities cellHighlightedGrayColor];
+	}
 	
   // 画背景
 	[backgroundColor set];
