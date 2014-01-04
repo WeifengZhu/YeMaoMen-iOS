@@ -147,7 +147,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-  NSString *cacheKey = [NSString stringWithFormat:@"%d%d", indexPath.section, indexPath.row];
+  NSString *cacheKey = [NSString stringWithFormat:@"%@", ((YMMPost *)self.tableViewContents[indexPath.row]).ID];
   NSCache *cellHeightCache = [YMMUtilities sharedInstance].secondViewCellHeightCache;
   NSNumber *height = [cellHeightCache objectForKey:cacheKey];
   if (!height) {
