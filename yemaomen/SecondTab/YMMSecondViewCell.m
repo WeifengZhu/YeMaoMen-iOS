@@ -71,13 +71,14 @@ static CGFloat ParentPostBackgroundRightMargin; // 回复post背景框距右边�
                                        lineBreakMode:NSLineBreakByWordWrapping].height;
   CGFloat cellHeight = NameTopMargin + NameHeight + ContentTopMargin + contentHeight + ContentBottomMargin;
   if (post.parentPost) {
+    // parent post的插入就只会增加两个高度，1. parent posts(parent post)本身的高度 2.多出来的一个margin。
     cellHeight += [YMMSecondViewCell parentCellsTotalHeight:post.parentPost] + ContentTopMargin;
   }
   return cellHeight;
 }
 
 /**
- 计算除了自己外的所有楼的高度。
+ 计算除了自己外的所有楼总的高度。
  @param parentPost
  直接回复的post
  @return 高度
@@ -90,6 +91,12 @@ static CGFloat ParentPostBackgroundRightMargin; // 回复post背景框距右边�
   return height;
 }
 
+/**
+ 根据post的content，计算这个post的高度。因为可变值只有一个content，所以参数就只需要content，返回的高度值包括其他的元素。
+ @param content
+ post的content。
+ @return 总的高度，包括content和其他元素。
+ */
 + (CGFloat)parentCellHeightWithContent:(NSString *)content {
   CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
   CGFloat contentWidth = screenWidth - ContentLeftMargin * 2 - ContentRightMargin * 2;
