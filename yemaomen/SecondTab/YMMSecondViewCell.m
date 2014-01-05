@@ -264,9 +264,9 @@ static CGFloat ParentPostBackgroundRightMargin; // 回复post背景框距右边�
   
 	UIColor *backgroundColor = [UIColor whiteColor];
   // highlighted的时候用同一种背景色
-	if(self.highlighted) {
-		backgroundColor = [YMMUtilities cellHighlightedGrayColor];
-	}
+//	if(self.highlighted) {
+//		backgroundColor = [YMMUtilities cellHighlightedGrayColor];
+//	}
 	
   // 画背景
 	[backgroundColor set];
