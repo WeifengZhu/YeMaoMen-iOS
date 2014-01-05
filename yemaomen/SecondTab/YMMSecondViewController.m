@@ -137,6 +137,7 @@
   YMMSecondViewCell *cell = (YMMSecondViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
   if (!cell) {
     cell = [[YMMSecondViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    cell.parentViewController = self;
   }
   cell.post = self.tableViewContents[indexPath.row];
   return cell;

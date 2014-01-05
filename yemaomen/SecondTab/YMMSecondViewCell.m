@@ -9,6 +9,7 @@
 #import "YMMSecondViewCell.h"
 #import "YMMPost.h"
 #import "UIView+frameAdjust.h"
+#import "YMMSecondViewController.h"
 
 @interface YMMSecondViewCell () {
   // parent post的baseline的y坐标。这个值初始化为parent post的顶部，parent post是基于这个y的相对值来画的，当一个parent post画完的时候，这个值被设置为parent post的底部，也就是下一个parent post的顶部。依次类推。注意parent post被画的顺序和被回复的顺序是反过来的。
@@ -207,6 +208,13 @@ static CGFloat ParentPostBackgroundRightMargin; // 回复post背景框距右边�
   }
 }
 
+- (void)showActionSheet {
+  NSString *likeActionString = [NSString stringWithFormat:@"赞 %@", _actionTargetPost.user.username];
+  NSString *repostActionString = [NSString stringWithFormat:@"回应 %@", _actionTargetPost.user.username];
+  UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:likeActionString, repostActionString, nil];
+  [actionSheet showInView:self.parentViewController.view];
+}
+
 #pragma mark - override methods
 
 /**
@@ -230,6 +238,7 @@ static CGFloat ParentPostBackgroundRightMargin; // 回复post背景框距右边�
     
     // YMMTODO: 弹出action sheet。
     YMMLOG(@"action target post ID: %@", _actionTargetPost.ID);
+    [self showActionSheet];
     return;
   }
   
@@ -239,6 +248,7 @@ static CGFloat ParentPostBackgroundRightMargin; // 回复post背景框距右边�
     
     // YMMTODO: 弹出action sheet。
     YMMLOG(@"action target post ID: %@", _actionTargetPost.ID);
+    [self showActionSheet];
     return;
   }
 }

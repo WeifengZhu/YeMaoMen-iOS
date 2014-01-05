@@ -10,10 +10,15 @@
 #import "YMMBaseCustomCell.h"
 
 @class YMMPost;
+@class YMMSecondViewController;
 
 @interface YMMSecondViewCell : YMMBaseCustomCell
+<
+UIActionSheetDelegate
+>
 
 @property (nonatomic, strong) YMMPost *post;
+@property (nonatomic, weak) YMMSecondViewController *parentViewController;
 
 + (CGFloat)cellHeightForPost:(YMMPost *)post;
 
