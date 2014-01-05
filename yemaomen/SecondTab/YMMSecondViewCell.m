@@ -106,8 +106,6 @@ static CGFloat ParentPostBackgroundRightMargin; // 回复post背景框距右边�
     // Initialization code
     _paragraphStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
     [_paragraphStyle setAlignment:NSTextAlignmentRight];
-    
-    _parentPostsArray = [NSMutableArray array];
   }
   return self;
 }
@@ -174,8 +172,6 @@ static CGFloat ParentPostBackgroundRightMargin; // 回复post背景框距右边�
  touch的坐标
  */
 - (YMMPost *)getTargetPostWithLocation:(CGPoint)location {
-  [self recursivlyAddParentPostToArray:self.post.parentPost];
-  
   if (location.y < _initialBaselineY) {
     return self.post;
   }
@@ -226,7 +222,8 @@ static CGFloat ParentPostBackgroundRightMargin; // 回复post背景框距右边�
     _actionTargetPost = self.post;
     
     // YMMTODO: 弹出action sheet。
-    
+    YMMLOG(@"action target post ID: %@", _actionTargetPost.ID);
+    return;
   }
   
   if (self.post.parentPost) {
@@ -234,6 +231,8 @@ static CGFloat ParentPostBackgroundRightMargin; // 回复post背景框距右边�
     _actionTargetPost = [self getTargetPostWithLocation:location];
     
     // YMMTODO: 弹出action sheet。
+    YMMLOG(@"action target post ID: %@", _actionTargetPost.ID);
+    return;
   }
 }
 
@@ -289,6 +288,11 @@ static CGFloat ParentPostBackgroundRightMargin; // 回复post背景框距右边�
 // override这个setter是因为要加setNeedsDisplay。
 - (void)setPost:(YMMPost *)post {
   _post = post;
+  if (self.post.parentPost) {
+    // 如果有parent post，则将parent post存入ivar数组，方便到时候处理点击事件。
+    _parentPostsArray = [NSMutableArray array];
+    [self recursivlyAddParentPostToArray:self.post.parentPost];
+  }
   [self setNeedsDisplay];
 }
 
