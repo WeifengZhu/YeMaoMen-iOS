@@ -13,7 +13,10 @@
 @interface YMMSecondViewCell () {
   // parent post的baseline的y坐标。这个值初始化为parent post的顶部，parent post是基于这个y的相对值来画的，当一个parent post画完的时候，这个值被设置为parent post的底部，也就是下一个parent post的顶部。依次类推。注意parent post被画的顺序和被回复的顺序是反过来的。
   CGFloat _parentBaselineY;
+  CGFloat _initialBaselineY; // 如果有parent post，用于记录最初的基线（parent post的顶部），不会随着parent的draw而发生变化。
   NSMutableParagraphStyle *_paragraphStyle;
+  YMMPost *_actionTargetPost; // 赞某人或回复某人的对象
+  NSMutableArray *_parentPostsArray; // 直接回复的parent post位于[0]处，直接回复的parent post回复的post位于[1]处，以此类推。需要调用[self recursivlyAddParentPostToArray:xxx]来产生正确的值。
 }
 
 @end
@@ -36,6 +39,8 @@ static CGFloat ContentRightMargin; // 内容距右边的距离
 static CGFloat ParentPostContentTopMargin; // 被回复内容距被回复作者的距离
 static UIFont *NameFontParent = nil; // 回复中名字的字体
 static UIFont *LikeFontParent = nil; // 回复中x 赞的字体
+static CGFloat ParentPostBackgroundLeftMargin; // 回复post背景框距左边的距离
+static CGFloat ParentPostBackgroundRightMargin; // 回复post背景框距右边的距离
 
 + (void)initialize {
   NameFont = [UIFont boldSystemFontOfSize:16];
@@ -54,6 +59,8 @@ static UIFont *LikeFontParent = nil; // 回复中x 赞的字体
   ParentPostContentTopMargin = 5.0;
   NameFontParent = [UIFont systemFontOfSize:14];
   LikeFontParent = [UIFont systemFontOfSize:12];
+  ParentPostBackgroundLeftMargin = ContentLeftMargin + 8.0;
+  ParentPostBackgroundRightMargin = ContentRightMargin + 8.0;
 }
 
 + (CGFloat)cellHeightForPost:(YMMPost *)post {
@@ -99,6 +106,8 @@ static UIFont *LikeFontParent = nil; // 回复中x 赞的字体
     // Initialization code
     _paragraphStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
     [_paragraphStyle setAlignment:NSTextAlignmentRight];
+    
+    _parentPostsArray = [NSMutableArray array];
   }
   return self;
 }
@@ -128,9 +137,9 @@ static UIFont *LikeFontParent = nil; // 回复中x 赞的字体
   CGContextRef context = UIGraphicsGetCurrentContext();
   CGContextSetLineWidth(context, 1.0);
   CGContextSetStrokeColorWithColor(context, [YMMUtilities parentPostBorderColor].CGColor);
-  CGRect rect = CGRectMake(ContentLeftMargin + 5,
+  CGRect rect = CGRectMake(ParentPostBackgroundLeftMargin,
                            _parentBaselineY,
-                           [UIScreen mainScreen].bounds.size.width - ContentLeftMargin - ContentRightMargin - 10,
+                           [UIScreen mainScreen].bounds.size.width - ParentPostBackgroundLeftMargin - ParentPostBackgroundRightMargin,
                            parentCellHeight);
   CGContextAddRect(context, rect);
   CGContextStrokePath(context);
@@ -159,11 +168,81 @@ static UIFont *LikeFontParent = nil; // 回复中x 赞的字体
   _parentBaselineY += parentCellHeight;
 }
 
+/**
+ 根据touch的y坐标，得出touch点所在的target post。
+ @param location
+ touch的坐标
+ */
+- (YMMPost *)getTargetPostWithLocation:(CGPoint)location {
+  [self recursivlyAddParentPostToArray:self.post.parentPost];
+  
+  if (location.y < _initialBaselineY) {
+    return self.post;
+  }
+  
+  CGFloat accumulatedY = _initialBaselineY;
+  for (int i = _parentPostsArray.count - 1; i >= 0; i--) {
+    CGFloat parentPostHeight = [YMMSecondViewCell parentCellHeightWithContent:((YMMPost *)_parentPostsArray[i]).content];
+    accumulatedY += parentPostHeight;
+    if (location.y <= accumulatedY) {
+      return _parentPostsArray[i];
+    }
+  }
+  
+  return self.post;
+}
+
+/**
+ 将parent post递归的加入到ivar _parentPostsArray里面. 直接回复的parent post位于[0]处。调用过这个方法之后，_parentPostsArray里面才会有正确的值。
+ @param parentPost
+ 直接回复的parent post。
+ */
+- (void)recursivlyAddParentPostToArray:(YMMPost *)parentPost {
+  [_parentPostsArray addObject:parentPost];
+  if (parentPost.parentPost) {
+    [self recursivlyAddParentPostToArray:parentPost.parentPost];
+  }
+}
+
+#pragma mark - override methods
+
+/**
+ Override这个方法，主要是为了处理touch事件。如果touch在parent post里面，则弹出针对parent post的action sheet：赞 xxx， 回复 xxx。如果touch不在parent post里面，则弹出的action sheet是针对本post的。
+ */
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+  YMMLOG(@"class: %@, _cmd: %@",[self class], NSStringFromSelector(_cmd));
+  
+  [super touchesEnded:touches withEvent:event];
+  
+  // 获取touch相对self.contentView的坐标。
+  UITouch *touch = [touches anyObject];
+  CGPoint location = [touch locationInView:self.contentView];
+  YMMLOG(@"touch location: x - %f, y - %f", location.x, location.y);
+  
+  // 先判断x，如果不在框内，则回复本post或赞本post。如果这个没有直接回复的post，也是回复本post或赞本post。
+  if (location.x < ParentPostBackgroundLeftMargin ||
+      location.x > ([UIScreen mainScreen].bounds.size.width - ParentPostBackgroundRightMargin) ||
+      !self.post.parentPost) {
+    _actionTargetPost = self.post;
+    
+    // YMMTODO: 弹出action sheet。
+    
+  }
+  
+  if (self.post.parentPost) {
+    // 有parentPost才进行下面的动作。
+    _actionTargetPost = [self getTargetPostWithLocation:location];
+    
+    // YMMTODO: 弹出action sheet。
+  }
+}
+
 #pragma mark - super class methods implementation
 
 - (void)drawCellContentView:(CGRect)rect {
   // 设置基线的y坐标
   _parentBaselineY = NameTopMargin + NameHeight + ContentTopMargin;
+  _initialBaselineY = _parentBaselineY;
   
   CGContextRef context = UIGraphicsGetCurrentContext();
   
