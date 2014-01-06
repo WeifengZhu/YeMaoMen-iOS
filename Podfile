@@ -1,4 +1,3 @@
 platform :ios, "7.0"
 
-pod 'AFNetworking'
-pod 'JSONKit'
+pod 'AFNetworking', '2.0.3'

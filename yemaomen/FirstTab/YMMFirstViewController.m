@@ -14,26 +14,55 @@
 
 @implementation YMMFirstViewController
 
-- (id)init
-{
-  self = [super init];
+- (id)initWithStyle:(UITableViewStyle)style {
+  self = [super initWithStyle:style];
   if (self) {
+    // Custom initialization
     self.title = @"每晚精选";
     self.tabBarItem.image = [UIImage imageNamed:@"first"];
   }
   return self;
 }
 							
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
   [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+  
+  // 加载最新数据
+//  [self loadingLatestData];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - data handling
+
+- (void)loadingLatestData {
+  YMMLOG(@"class: %@, _cmd: %@",[self class], NSStringFromSelector(_cmd));
+  
+  [super loadingLatestData];
+  
+  NSString *urlString = [NSString stringWithFormat:@"%@/topics", ServerHost];
+  [self.requestOperationManager GET:urlString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    YMMLOG(@"success, responseObject: %@", responseObject);
+    // 每次加载最新的放在前面，保留已经加载的。
+    NSMutableArray *temp = [NSMutableArray arrayWithArray:responseObject];
+    [temp addObjectsFromArray:self.tableViewContents];
+    self.tableViewContents = temp;
+    [self loadLatestFinished];
+  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    YMMLOG(@"failure, error: %@", error);
+    [self loadLatestFinished];
+  }];
+}
+
+- (void)loadingMoreData {
+  YMMLOG(@"class: %@, _cmd: %@",[self class], NSStringFromSelector(_cmd));
+  
+  [super loadingMoreData];
+  
 }
 
 @end

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YMMSecondViewController : UIViewController
+@interface YMMSecondViewController : YMMBaseRefreshViewController
 
 @end
