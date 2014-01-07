@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface YMMUser : NSObject
+<
+NSCoding
+>
 
 @property (nonatomic, strong, readonly) NSString *username;
 @property (nonatomic, strong, readonly) NSString *bio;
@@ -21,5 +24,6 @@
 + (YMMUser *)currentUser;
 
 - (id)initWithDictionary:(NSDictionary *)dict;
+- (void)updateUserInfoWithDictionary:(NSDictionary *)dict;
 
 @end
